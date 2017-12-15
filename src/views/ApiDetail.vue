@@ -23,8 +23,8 @@
                             <!--<span class="key">调用样例及调试工具：</span>-->
                             <!--API测试工具-->
                         <!--</div>-->
-                        <div class="api-info">请求参数说明：</div>
-                        <table class="table table-bordered">
+                        <div class="api-info">请求参数：<span v-if="!api.params">无</span></div>
+                        <table class="table table-bordered" v-if="api.params">
                             <tr>
                                 <th>名称</th>
                                 <th>类型</th>
@@ -38,7 +38,7 @@
                                 <td>{{ param.desc }}</td>
                             </tr>
                         </table>
-                        <div class="api-info">返回参数说明：</div>
+                        <!--<div class="api-info">返回参数说明：</div>-->
                         <!--<table class="table table-bordered">-->
                             <!--<tr>-->
                                 <!--<th>名称</th>-->
