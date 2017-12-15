@@ -1,0 +1,18 @@
+@import "var";
+
+.page-api-detail {
+
+}
+.container-main {
+    margin-top: 32px;
+}
+.api-item {
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eee;
+    .api-info {
+        margin-bottom: 8px;
+    }
+    .badge {
+        margin-right: 8px;
+    }
+}
