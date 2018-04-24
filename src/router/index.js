@@ -3,9 +3,14 @@ import Router from 'vue-router'
 
 const Home = resolve => require(['@/views/Home'], resolve)
 const About = resolve => require(['@/views/About'], resolve)
+const Help = resolve => require(['@/views/Help'], resolve)
+const Price = resolve => require(['@/views/Price'], resolve)
+const Tool = resolve => require(['@/views/Tool'], resolve)
+const Type = resolve => require(['@/views/Type'], resolve)
 
 const Api = resolve => require(['@/views/Api'], resolve)
 const ApiDetail = resolve => require(['@/views/ApiDetail'], resolve)
+const ApiHome = resolve => require(['@/views/ApiHome'], resolve)
 
 const Error404 = resolve => require(['@/views/error/Error404'], resolve)
 
@@ -30,11 +35,33 @@ let routes = [
         }
     },
     {
+        path: '/help',
+        component: Help
+    },
+    {
+        path: '/price',
+        component: Price
+    },
+    {
+        path: '/tool',
+        component: Tool
+    },
+    {
         path: '/apis',
         component: Api,
         meta: {
             title: '接口大全'
-        }
+        },
+        children: [
+            {
+                path: '',
+                component: ApiHome
+            },
+            {
+                path: '/types/:id',
+                component: Type
+            }
+        ]
     },
     {
         path: '/apis/:id',
